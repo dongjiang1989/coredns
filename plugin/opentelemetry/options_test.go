@@ -63,7 +63,7 @@ func TestOptions(t *testing.T) {
 	}
 
 	WithSamplingStrategy(AlwaysOff)(ctx, options)
-	if options.samplingStrategy != 0 {
+	if options.samplingStrategy != AlwaysOff {
 		t.Errorf("got %v sampling rate, want 0", options.samplingStrategy)
 	}
 	if options.samplingStrategyFraction != 0.0 {

@@ -2,6 +2,7 @@ package opentelemetry
 
 import (
 	"context"
+	//	"fmt"
 	"net/url"
 	"strings"
 	"time"
@@ -179,7 +180,6 @@ func WithCustomExporter(endpoint string, timeout time.Duration, header map[strin
 		opts.collectorEndpoint = endpoint
 		opts.collectorRequestTimeout = timeout
 		opts.collectorRequestHeader = header
-
 		u, err := url.Parse(endpoint)
 		if err != nil {
 			return errCollectorEndpointStyle

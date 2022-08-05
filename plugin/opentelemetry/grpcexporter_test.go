@@ -10,7 +10,7 @@ import (
 func TestNewOtlpTraceGrpc(t *testing.T) {
 
 	ctx := context.Background()
-	exporter, err := NewOtlpTraceGrpc(ctx, "grpc://localhost:4317", time.Second, nil)
+	exporter, err := NewOtlpTraceGrpc(ctx, "localhost:4317", time.Second, nil)
 
 	if err != nil {
 		t.Errorf("got %v", err)

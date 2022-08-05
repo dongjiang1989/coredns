@@ -28,7 +28,7 @@ With this form, all queries will be traced.
 Additional features can be enabled with this syntax:
 		
 ~~~
-trace [ENDPOINT-TYPE] [ENDPOINT] {
+opentelemetry [servicename] {
 	sample NAME
 	fraction RATE
 	
@@ -44,6 +44,7 @@ trace [ENDPOINT-TYPE] [ENDPOINT] {
 }
 ~~~
 
+* `servicename` is opentelemetry report service name. default "coredns".
 * `sample` **NAME** is the sample strategy. Currently only `alwaysoff` , `traceidratio` and `alwayson` are supported. Default to `alwayson`.  The default is alwayson.
 * `fraction` **RATE** is the ratio for sample strategy. Must in [0,1]. if sample is `alwayson`, fraction is `1`; if sample is `alwaysoff`,  fraction is `1`; if sample is `traceidratio`, using fraction value.
 
